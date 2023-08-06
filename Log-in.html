@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SingUp</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/8046/8046696.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<!-- <link rel="stylesheet" href="style.css"> -->
+<style>
+    body{
+        background: #83a4d4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #b6fbff, #83a4d4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    }
+    .book {
+  position: relative;
+  border-radius: 10px;
+  width: 220px;
+  height: 300px;
+  background-color: whitesmoke;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: lightgray;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-80deg);
+  -ms-transform: rotatey(-80deg);
+  transform: rotatey(-100deg);
+}
+    .container-1 {
+  display: flex;
+  width: 620px;
+  height: 540px;
+  max-width: 99%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background-color: #ffffff25;
+  border-radius: 15px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.03);
+  border: 0.1px solid rgba(128, 128, 128, 0.178);
+}
+
+.left {
+  width: 66%;
+  height: 100%;
+}
+
+.form-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  backdrop-filter: blur(20px);
+  position: relative;
+}
+
+.form-1::before {
+  position: absolute;
+  content: "";
+  width: 40%;
+  height: 40%;
+  right: 1%;
+  z-index: -1;
+  background: radial-gradient(
+    circle,
+    rgb(194, 13, 170) 20%,
+    rgb(26, 186, 235) 60%,
+
+    rgb(26, 186, 235) 100%
+  );
+  filter: blur(70px);
+  border-radius: 50%;
+}
+
+.right {
+  width: 34%;
+  height: 100%;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+.img img {
+  width: 100%;
+    height: auto;
+    mix-blend-mode: multiply;
+    margin-top: 163px;
+}
+
+.container-1::after {
+  position: absolute;
+  content: "";
+  width: 80%;
+  height: 80%;
+  right: -40%;
+  background: rgb(157, 173, 203);
+  background: radial-gradient(
+    circle,
+    rgba(157, 173, 203, 1) 61%,
+    rgba(99, 122, 159, 1) 100%
+  );
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.input,
+button {
+  background: rgba(253, 253, 253, 0);
+  outline: none;
+  border: 1px solid rgba(255, 0, 0, 0);
+  border-radius: 0.5rem;
+  padding: 10px 40px;
+  margin: 10px auto;
+  width: 80%;
+  display: block;
+  color: #425981;
+  font-weight: 700;
+  font-size: 1.1em;
+}
+
+.input-block {
+  position: relative;
+}
+
+label {
+  position: absolute;
+  left: 15%;
+  top: 37%;
+  pointer-events: none;
+  color: gray;
+}
+
+.forgot {
+  display: block;
+  margin: 5px 0 10px 0;
+  margin-left: 35px;
+  color: #5e7eb6;
+  font-size: 0.9em;
+}
+
+.input:focus + label,
+.input:valid + label {
+  transform: translateY(-120%) scale(0.9);
+  transition: all 0.4s;
+}
+
+button {
+  background-color: #5e7eb6;
+  color: white;
+  font-size: medium;
+  box-shadow: 2px 4px 8px rgba(70, 70, 70, 0.178);
+}
+
+a {
+  color: #5e7eb6;
+}
+
+.input {
+  box-shadow: inset 4px 4px 4px rgba(165, 163, 163, 0.315),
+    4px 4px 4px rgba(218, 218, 218, 0.13);
+}
+
+/* @import url('https://fonts.googleapis.com/css?family=Roboto:400,700'); */
+
+
+    
+.congrats {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  /* font-size:21px; */
+  /* text-transform:uppercase; */
+  color: transparent;
+    background: linear-gradient(to left, #1e5799, #2ce0bf, #76dd2c, #dba62b, #e02cbf, #1e5799);
+  background-size: 1000px 100%;
+  animation: bg 15s linear infinite;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+@keyframes bg {
+  0% {
+    background-position-x: 0;
+  }
+  100% {
+    background-position-x: 10000px;
+  }
+}
+
+
+
+.form {
+  --black: #000000;
+  --ch-black: #141414;
+  --eer-black: #1b1b1b;
+  --night-rider: #2e2e2e;
+  --white: #ffffff;
+  --af-white: #f3f3f3;
+  --ch-white: #e1e1e1;
+  --tomato: #fa5656;
+  font-family: Helvetica, sans-serif;
+  padding: 25px;
+  display: flex;
+  max-width: 420px;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  color: var(--af-white);
+  background-color: var(--black);
+  border-radius: 8px;
+  position: relative;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .1);
+}
+
+/*----heading and description-----*/
+
+.info {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
+
+.description {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+/*----input-fields------*/
+
+.form .input-fields {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.form .input-fields input {
+  height: 2.5em;
+  width: 2.5em;
+  outline: none;
+  text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 1.5rem;
+  color: var(--af-white);
+  border-radius: 5px;
+  border: 2.5px solid var(--eer-black);
+  background-color: var(--eer-black);
+}
+
+.form .input-fields input:focus {
+  border: 1px solid var(--af-white);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, .15);
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+/*-----verify and clear buttons-----*/
+
+.action-btns {
+  display: flex;
+  margin-top: 20px;
+  gap: 0.5rem;
+}
+
+.verify {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--night-rider);
+  text-shadow: none;
+  background: var(--af-white);
+  box-shadow: transparent;
+  border: 1px solid var(--af-white);
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.verify:hover,.verify:focus {
+  color: var(--night-rider);
+  background: var(--white);
+}
+
+.clear {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--ch-white);
+  text-shadow: none;
+  background: transparent;
+  border: 1px solid var(--ch-white);
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.clear:hover,.clear:focus {
+  color: var(--tomato);
+  background-color: transparent;
+  border: 1px solid var(--tomato);
+}
+
+/*-----close button------*/
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background-color: var(--night-rider);
+  color: var(--ch-white);
+  height: 30px;
+  width: 30px;
+  display: grid;
+  place-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: .5s ease;
+}
+
+.close:hover {
+  background-color: var(--tomato);
+  color: var(--white);
+}
+
+</style>
+</head>
+<body>
+
+
+
+    
+
+
+
+    <div class="container" style="margin-top: 40px">
+      <h1 class="text-center congrats"  style="margin-bottom: 70px">Please Sign in </h1>
+      <div class="row">
+        <div class="col-lg-5 col-12 my-auto">
+          <div class="book   " style="height: 350px; width: 300px; background: #4b6cb7; 
+          background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  
+          background: linear-gradient(to right, #182848, #4b6cb7); 
+          color: white;
+          " >
+            <h5>How can Creat a New Account</h5>
+            <p class="ms-3"><ol>
+              <li>Click on "Sign Up" or "Create Account" </li>
+              <li>Fill in Basic Information</li>
+              <li>Verify Email (if required)</li>
+              <li>Set Preferences (if applicable)</li>
+              <li>Submit and Confirm</li>
+              <li>Account Confirmation</li>
+            </ol>
+           </p>
+            <div class="cover" style="background: #83a4d4;  
+            background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4); 
+            background: linear-gradient(to right, #b6fbff, #83a4d4); 
+            ">
+              <img src="  login image.gif" alt="" width="100%" height="100%">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7 col-12  position-relative">
+          <div class="container-1">
+          <div class="left">
+              <form class="form-1">
+                  <div class="input-block">
+                      <input class="input" type="text" id="email" required="">
+                      <label for="email">Username</label>
+                  </div>
+                  <div class="input-block">
+                      <input class="input" type="password" id="pass" required="">
+                      <label for="pass">Password</label>
+                  </div>
+                  <div class="input-block">
+  <span class="forgot"><a href="#">Forgot Password?</a></span>
+  <span class="forgot"><a href="#">Creat a New Account ?</a></span>
+                  <!-- <button>Submit</button> -->
+              </div>
+              </form>
+          </div>
+          <div class="right">
+              <div class="img">
+                <img src="https://img.freepik.com/free-vector/tablet-login-concept-illustration_114360-7963.jpg?w=740&t=st=1688457393~exp=1688457993~hmac=47fc5ae6a5268481132b1b50ae4156c9c20fc4b75759902da32a91d8aadb2ad8" alt="" width="100%">
+              </div>
+  
+          </div>
+      </div>
+    
+       <!--  Modal trigger button  -->
+      
+       <div class="modal fade " id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel">Verification</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form">
+              <span class="close">X</span>
+            
+              <div class="info">
+              <span class="title">Two-Factor Verification</span>
+            <p class="description">Enter the two-factor authentication code provided by the authenticator app </p>
+               </div>
+                <div class="input-fields">
+                <input maxlength="1" type="tel" placeholder="" required>
+                <input maxlength="1" type="tel" placeholder="" required>
+                <input maxlength="1" type="tel" placeholder="" required>
+                <input maxlength="1" type="tel" placeholder="" required>
+              </div>
+            
+                  <div class="action-btns">
+                    <a href="#" class="verify" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Verify</a>
+                    <a href="#" class="clear">Clear</a>
+                  </div>
+            
+            </form>
+          </div>
+          <div class="modal-footer">
+            <!-- <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">
+
+ Verification
+              
+            </button> -->
+          </div>
+          </div>
+        </div>
+         </div>
+         <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalToggleLabel2"> LOGIN</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-6 ">
+           <img src="https://img.freepik.com/free-vector/app-development-concept-with-flat-deisng_23-2147852845.jpg?w=740&t=st=1688711338~exp=1688711938~hmac=350bc1ab7a7f69a2bfb0776717eabb0120b341e484d46577eb6265d18e25ca4f" alt="" width="100%" class="rounded-3">
+          </div>
+          <div class="col-6">
+           <h4 class="congrats">Congratulation</h4>
+           <p style="margin-top: 32px;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, error.</p>
+          </div>
+            </div>
+          </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back to first</button>
+          </div>
+          </div>
+        </div>
+         </div>
+         <a class="btn btn-primary position-absolute px-5" data-bs-toggle="modal" href="#exampleModalToggle" role="button" style="margin-top: -160px; margin-left: 50px; ">Sign in</a>
+       
+       
+    </div>
+      </div>
+    </div>
+    
+  
+
+
+</body>
+</html>
+
